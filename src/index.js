@@ -38,7 +38,7 @@ function showStories() {
     stories.map(story => {
         storyWrapper.innerHTML += 
         `<span class="story-container">
-            <a class="story-title" href="${story.url}">${++currentId}. ${story.title}</a>
+            <a class="story-title" href="${story.url}" target="_blank">${++currentId}. ${story.title}</a>
             <span class="story-date">${timeSince(new Date(story.time * 1000))}</span>
         </span>`
     })
