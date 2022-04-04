@@ -1,5 +1,6 @@
 import './style.css'
 import axios from "axios";
+
 const newStoriesUrl = 'https://hacker-news.firebaseio.com/v0/newstories.json';
 const storyUrl = 'https://hacker-news.firebaseio.com/v0/item/';
 const storyWrapper = document.getElementById('story-wrapper');
@@ -12,7 +13,7 @@ let stories = [];
 startApp(); //show first 10 stories
 
 async function startApp() {
-    idList = await fetchData(newStoriesUrl);
+    idList = await fetchData(newStoriesUrl); //get ids
     await getStories();
     showStories();
 }
@@ -45,7 +46,7 @@ function showStories() {
     getStories(); //fetch next 10 stories (ready to show)
 }
 
-//get data timestamps
+//get date timestamps
 const intervals = [
     { label: 'day', seconds: 86400 },
     { label: 'hour', seconds: 3600 },
